@@ -1,0 +1,130 @@
+/* Full screen canvas layout */
+.search-page-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Central layout block restricting the content scale beautifully */
+.search-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 584px; /* Matches Chrome's exact desktop layout container constraint */
+  margin-top: 18vh;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Custom Logo placeholder bounds */
+.logo-container {
+  margin-bottom: 28px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container {
+  margin-bottom: 28px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 92px; /* Keeps the spacing consistent */
+}
+
+.custom-logo {
+  max-height: 100%;
+  max-width: 270px;
+  object-fit: contain;
+}
+
+/* Pristine crisp rounded search box container */
+.search-bar-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  padding: 0 14px 0 16px;
+  height: 46px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  transition: box-shadow 0.1s ease;
+}
+
+.search-bar-box:hover,
+.search-bar-box:focus-within {
+  box-shadow: 0 2px 8px rgba(32, 33, 36, 0.35);
+}
+
+/* Lucide Vector Icons Styling */
+.icon-left {
+  color: #9aa0a6;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.main-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #202124;
+  background: transparent;
+  width: 100%;
+}
+
+.icon-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.action-icon {
+  color: #5f6368;
+  cursor: pointer;
+  transition: color 0.1s ease;
+}
+
+.action-icon:hover {
+  color: #202124;
+}
+
+/* Custom modern AI pill button */
+.chrome-ai-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f1f3f4;
+  border: none;
+  border-radius: 100px;
+  padding: 6px 12px;
+  color: #3c4043;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.chrome-ai-btn:hover {
+  background-color: #e8eaed;
+}
+
+/* Overlay dropdown setup positioned absolute to prevent pushing the UI down */
+.suggestions-overlay-panel {
+  position: absolute;
+  top: 46px; /* Sits perfectly aligned below the search-bar height boundary */
+  left: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+  border-top: none;
+  overflow: hidden;
+  z-index: 999;
+}
