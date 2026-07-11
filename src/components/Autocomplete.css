@@ -128,3 +128,57 @@
   overflow: hidden;
   z-index: 999;
 }
+/* Status feedback blocks inside the overlay panel */
+.dropdown-status-row {
+  padding: 14px 16px;
+  color: #70757a;
+  font-size: 14px;
+}
+
+.error-text {
+  color: #d93025;
+}
+
+/* Unstyled container list matching input limits */
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+}
+
+/* Row wrapper with hover effects mimicking Google keyboard navigation highlights */
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  gap: 12px;
+  transition: background-color 0.1s ease;
+}
+
+.suggestion-item:hover {
+  background-color: #f1f3f4;
+}
+
+.item-search-icon {
+  color: #9aa0a6;
+  flex-shrink: 0;
+}
+
+/* Tiny thumbnail graphic generated directly from DummyJSON payloads */
+.item-thumbnail-preview {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  flex-shrink: 0;
+}
+
+.item-title-text {
+  font-size: 15px;
+  color: #202124;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
