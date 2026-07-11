@@ -13,10 +13,10 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 584px; /* Matches Chrome's exact desktop layout container constraint */
+  max-width: 584px;
   margin-top: 18vh;
   padding: 0 20px;
-  position: relative;
+  position: relative; /* CRITICAL: Anchors the dropdown below */
 }
 
 /* Custom Logo placeholder bounds */
@@ -118,7 +118,7 @@
 /* Overlay dropdown setup positioned absolute to prevent pushing the UI down */
 .suggestions-overlay-panel {
   position: absolute;
-  top: 46px; /* Sits perfectly aligned below the search-bar height boundary */
+  top: 138px; /* Pushes the dropdown perfectly below the logo + search bar combined height */
   left: 20px;
   right: 20px;
   background-color: #ffffff;
