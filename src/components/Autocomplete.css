@@ -118,12 +118,15 @@
 /* Overlay dropdown setup positioned absolute to prevent pushing the UI down */
 .suggestions-overlay-panel {
   position: absolute;
-  top: 138px; /* Pushes the dropdown perfectly below the logo + search bar combined height */
-  left: 20px;
-  right: 20px;
+  top: 45px; /* Pushes the menu right below the search bar's bottom edge */
+  left: 0;
+  right: 0;
   background-color: #ffffff;
-  border-radius: 0 0 24px 24px;
+  /* Flat top edges so it locks to the bar, rounded bottom edges */
+  border-radius: 0 0 24px 24px; 
+  padding: 4px 0 12px 0; /* Clean inner margins */
   box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+  border: 1px solid #e8eaed;
   border-top: none;
   overflow: hidden;
   z-index: 999;
