@@ -118,18 +118,17 @@
 /* Overlay dropdown setup positioned absolute to prevent pushing the UI down */
 .suggestions-overlay-panel {
   position: absolute;
-  top: 45px; /* Pushes the menu right below the search bar's bottom edge */
+  top: 56px; /* Tells it to start exactly where the 46px search bar ends */
   left: 0;
   right: 0;
   background-color: #ffffff;
-  /* Flat top edges so it locks to the bar, rounded bottom edges */
   border-radius: 0 0 24px 24px; 
-  padding: 4px 0 12px 0; /* Clean inner margins */
+  padding: 8px 0;
   box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
   border: 1px solid #e8eaed;
   border-top: none;
   overflow: hidden;
-  z-index: 999;
+  z-index: 999; 
 }
 /* Status feedback blocks inside the overlay panel */
 .dropdown-status-row {
@@ -184,4 +183,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.search-box-rel-container {
+  position: relative;
+  width: 100%;
 }

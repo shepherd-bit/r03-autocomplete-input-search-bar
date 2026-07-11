@@ -60,72 +60,76 @@ function Autocomplete() {
         {/* 1. Logo Container Placeholder */}
         <div className="logo-container">
           <img 
-            src="/Shepherd-Logo.svg" 
+            src="/image_2dd6dc.png" 
             alt="My Custom Logo" 
             className="custom-logo" 
           />
         </div>
 
-        {/* 2. Sleek Rounded Search Box */}
-        <div className="search-bar-box">
-          <Search className="icon-left" size={20} />
+        {/* 2. Relative Container Wrapper that forces the Dropdown to stay underneath */}
+        <div className="search-box-rel-container">
           
-          <input
-            type="text"
-            className="main-search-input"
-            placeholder="Ask Google or search products..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          
-          <div className="icon-actions-right">
-            <Mic className="action-icon" size={20} />
-            <Camera className="action-icon" size={20} />
-            <button className="chrome-ai-btn">
-              <Sparkles size={16} />
-              <span>AI Mode</span>
-            </button>
-          </div>
-        </div>
-
-        {/* 3. Floating Dropdown Container */}
-        {query.trim() && (
-          <div className="suggestions-overlay-panel">
-            {loading && <div className="dropdown-status-row">Searching catalog...</div>}
+          {/* The visible search input container */}
+          <div className="search-bar-box">
+            <Search className="icon-left" size={20} />
             
-            {error && <div className="dropdown-status-row error-text">{error}</div>}
-
-            {!loading && !error && suggestions.length > 0 && (
-              <ul className="suggestions-list">
-                {suggestions.map((product) => (
-                  <li 
-                    key={product.id} 
-                    className="suggestion-item"
-                    onClick={() => {
-                      // Step 11: Set input value to clicked product & close dropdown
-                      setQuery(product.title);
-                      setSuggestions([]);
-                    }}
-                  >
-                    <Search size={16} className="item-search-icon" />
-                    {product.thumbnail && (
-                      <img 
-                        src={product.thumbnail} 
-                        alt={product.title} 
-                        className="item-thumbnail-preview" 
-                      />
-                    )}
-                    <span className="item-title-text">{product.title}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {!loading && !error && query.trim() && suggestions.length === 0 && (
-              <div className="dropdown-status-row">No matching products found</div>
-            )}
+            <input
+              type="text"
+              className="main-search-input"
+              placeholder="Ask Google or search products..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            
+            <div className="icon-actions-right">
+              <Mic className="action-icon" size={20} />
+              <Camera className="action-icon" size={20} />
+              <button className="chrome-ai-btn">
+                <Sparkles size={16} />
+                <span>AI Mode</span>
+              </button>
+            </div>
           </div>
-        )}
+
+          {/* 3. Floating Dropdown Container */}
+          {query.trim() && (
+            <div className="suggestions-overlay-panel">
+              {loading && <div className="dropdown-status-row">Searching catalog...</div>}
+              
+              {error && <div className="dropdown-status-row error-text">{error}</div>}
+
+              {!loading && !error && suggestions.length > 0 && (
+                <ul className="suggestions-list">
+                  {suggestions.map((product) => (
+                    <li 
+                      key={product.id} 
+                      className="suggestion-item"
+                      onClick={() => {
+                        setQuery(product.title);
+                        setSuggestions([]);
+                      }}
+                    >
+                      <Search size={16} className="item-search-icon" />
+                      {product.thumbnail && (
+                        <img 
+                          src={product.thumbnail} 
+                          alt={product.title} 
+                          className="item-thumbnail-preview" 
+                        />
+                      )}
+                      <span className="item-title-text">{product.title}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {!loading && !error && query.trim() && suggestions.length === 0 && (
+                <div className="dropdown-status-row">No matching products found</div>
+              )}
+            </div>
+          )}
+
+        </div> {/* End of search-box-rel-container */}
 
       </div>
     </div>
