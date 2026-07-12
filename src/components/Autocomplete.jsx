@@ -60,7 +60,7 @@ function Autocomplete() {
         {/* 1. Logo Container Placeholder */}
         <div className="logo-container">
           <img 
-            src="/image_2dd6dc.png" 
+            src="/Shepherd-Logo.svg" 
             alt="My Custom Logo" 
             className="custom-logo" 
           />
