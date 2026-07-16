@@ -1,4 +1,4 @@
-# r03-autocomplete-input-search-bar
+# Autocomple Search Bar (Google Clone)
 
 ![Preview](./public/suggestive-search-bar.PNG)
 
